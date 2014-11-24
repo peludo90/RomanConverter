@@ -2,17 +2,36 @@ package co.udea.romarconverter.entity;
 
 public class Converter {
 
+	String[][] bases = {{"I","V","X"},
+						{"X","L","C"},
+						{"C","D","M"}};
 	
 	public Converter(){
-		
+		super();
 	}
 	
 	public String toRoman(int value){
 		
-				
-		return convertModule(value,"I","V","X");
 		
+		if(isInRange(value)){
+		String result = "";
+		int exponent = valueSize(value);
+		do{ 
+			exponent--;
+			int alfa =(int) (value/Math.pow(10,exponent));
+			value = (int) (value%Math.pow(10,exponent));
+			result +=	 convertModule(alfa,bases[exponent][0],bases[exponent][1],bases[exponent][2]);
+			
+		}while(value!= 0);
+		
+		return result;
+		}else{
+			return null;
+		}
 	}
+	
+	
+	
 	
 	
 	public String convertModule(int value, String baseMono, String basePenta, String baseDeca){
@@ -41,5 +60,16 @@ public class Converter {
 
 	}
 	
+	public int valueSize(int value){
+		return String.valueOf(value).length();
+	}
 	
+	
+	public boolean isInRange(int value){
+		if(0<value&&value<4000){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

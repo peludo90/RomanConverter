@@ -55,4 +55,88 @@ public class TestConverter {
 		
 		assertEquals("IX",intConverted);	
 	}
+	
+	@Test
+	public void convertTen(){
+		Converter converter = new Converter();
+		
+		String intConverted = converter.toRoman(10);
+		
+		assertEquals("X",intConverted);	
+	}
+	
+	@Test
+	public void convert33(){
+		Converter converter = new Converter();
+		
+		String intConverted = converter.toRoman(33);
+		
+		assertEquals("XXXIII",intConverted);	
+	}
+	
+	
+	@Test
+	public void convert99(){
+		Converter converter = new Converter();
+		
+		String intConverted = converter.toRoman(33);
+		
+		assertEquals("XCIX",intConverted);	
+	}
+	
+	@Test
+	public void convert50(){
+		Converter converter = new Converter();
+		
+		String intConverted = converter.toRoman(50);
+		
+		assertEquals("L",intConverted);	
+	}
+	
+	
+	@Test
+	public void convert100(){
+		Converter converter = new Converter();
+		
+		String intConverted = converter.toRoman(100);
+		
+		assertEquals("C",intConverted);	
+	}
+	
+	@Test
+	public void convert1000(){
+		Converter converter = new Converter();
+		
+		String intConverted = converter.toRoman(1000);
+		
+		assertEquals("M",intConverted);	
+	}
+	
+	@Test
+	public void convert1853(){
+		Converter converter = new Converter();
+		
+		String intConverted = converter.toRoman(1000);
+		
+		assertEquals("MDCCCLIII",intConverted);	
+	}
+	
+	
+	@Test
+	public void convert3999(){
+		Converter converter = new Converter();
+		
+		String intConverted = converter.toRoman(1000);
+		
+		assertEquals("MMMCMXCIX",intConverted);	
+	}
+	
+	@Test
+	public void convert4000(){
+		Converter converter = new Converter();
+		
+		String intConverted = converter.toRoman(1000);
+		
+		assertEquals(null,intConverted);	
+	}
 }
